@@ -21,7 +21,8 @@ gem 'jquery-rails'
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
-	# System dependent gems
+
+	# System dependent gems for Guard
 	# Linux
 	gem 'rb-inotify'
 	gem 'libnotify'
@@ -33,6 +34,10 @@ group :test do
 	# gem 'rb-fchange'
 	# gem 'rb-notifu'
 	# gem 'win32console'
+	
+	# gems for Spork
+	gem 'guard-spork'
+	gem 'spork'
 end
 
 group :production do
