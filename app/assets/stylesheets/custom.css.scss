@@ -1,0 +1,109 @@
+@import "bootstrap";
+
+$pureWhite: #fff;
+$grayMediumLight: #eaeaea;
+
+/******** Universal *********/
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding: { top: 4em; }
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+
+    h1 {
+        margin: { bottom: 1em; }
+    }
+}
+
+/******* Typography ********/
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1, h2 {
+    margin: { bottom: 1em; }
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    text-align: center;
+    font-weight: normal;
+    color: $grayLight;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+/***** Header *****/
+
+#logo {
+    float: left;
+    margin-right: 1em;
+    font-size: 1.7em;
+    color: $pureWhite;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding: { top: 0.5em; }
+    font-weight: bold;
+    line-height: 1;
+
+    &:hover {
+        color: $pureWhite;
+        text-decoration: none;
+    }
+}
+
+/***** Footer *****/
+
+footer {
+    margin: { top: 3em; }
+    padding: { top: 0.5em; }
+    border: { top: 0.1em solid $grayMediumLight; }
+    color: $grayLight;
+
+    a {
+        color: #555;
+
+        &:hover {
+            color: #222;
+        }
+    }
+
+    small {
+        float: left;
+    }
+
+    ul {
+        float: right;
+        list-style: none;
+
+        li {
+            float: left;
+            margin: { left: 1em; }
+        }
+    }
+}

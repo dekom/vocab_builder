@@ -1,1 +1,5 @@
 - provide(:title, "Contact")
+%h1= yield(:title)
+
+%section{itemscope: true, itemtype: "http://data-vocabulary.org/Person"}
+  %h1{itemprop: "name"}= INFO["author"]["name"]
