@@ -2,38 +2,45 @@ require 'spec_helper'
 
 describe "Pages" do
 
-    subject { page }
+    describe "Components" do
+        subject { page }
 
-	describe "Home Page" do
-        before { visit root_path }
-        title = "Home"
+        shared_examples_for "all pages" do
+            it { should have_selector('h1', text: heading) }
+            it { should have_selector('title', text: full_title(page_title)) }
+        end
 
-		it { should have_selector('title', text: full_title('')) }
-		it { should have_selector('h1', text: full_title('')) }
-        it { should_not have_selector('title', text: title) }
-	end
+        describe "Home Page" do
+            before { visit root_path }
+            let (:heading) {'Vocabulary Builder'}
+            let (:page_title) {''}
 
-	describe "Help Page" do
-        before { visit help_path }
-        title = "Help"
+            it_should_behave_like "all pages"
+            it { should_not have_selector 'title', text: 'Home |' }
+        end
 
-		it { should have_selector('title', text: full_title(title)) }
-		it { should have_selector('h1', text: title) }
-	end
+        describe "Help Page" do
+            before { visit help_path }
+            let (:heading) {'Help'}
+            let (:page_title) {'Help'}
 
-	describe "About Page" do
-        before { visit about_path }
-        title = "About"
+            it_should_behave_like "all pages"
+        end
 
-		it { should have_selector('title', text: full_title(title)) }
-		it { should have_selector('h1', text: title) }
-	end
+        describe "About Page" do
+            before { visit about_path }
+            let (:heading) {'About'}
+            let (:page_title) {'About'}
 
-	describe "Contact Page" do
-        before { visit contact_path }
-        title = "Contact"
+            it_should_behave_like "all pages"
+        end
 
-		it { should have_selector('title', text: full_title(title)) }
-		it { should have_selector('h1', text: title) }
-	end
+        describe "Contact Page" do
+            before { visit contact_path }
+            let (:heading) {'Contact'}
+            let (:page_title) {'Contact'}
+
+            it_should_behave_like "all pages"
+        end
+    end
 end
