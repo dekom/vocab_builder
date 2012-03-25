@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'haml'
 gem 'bootstrap-sass' # Will use this for now, going to checkout less-rails
+gem 'thin' # Ruby webserver instead of WEBrick
 
 group :development do
 	gem 'sqlite3'
