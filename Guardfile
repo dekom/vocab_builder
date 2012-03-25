@@ -35,9 +35,14 @@ guard 'rspec', :version => 2, :all_after_pass => false do
     watch('app/controllers/application_controller.rb')  { "spec/controllers" }
     
     # Capybara request specs
+
+    # Non-layout changes
     watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| 
         [   "spec/requests/#{m[1]}_spec.rb",
             "spec/requests/#{m[1].pluralize}_spec.rb"
         ]
     }
+
+    # Layout changes
+    watch(%r{^app/views/layouts/.*\.(erb|haml)$})       { |m| "spec/pages_spec.rb" }
 end
